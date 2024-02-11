@@ -1,0 +1,58 @@
+﻿@model Products
+
+@*ADDING*@
+<form method="post" asp-action="Add">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="test-primary">Create Product</h2>
+            <hr />
+        </div>
+        @*@<div asp-validation-summary="All"></div>*@
+        <div class="mb-3">
+            <label asp-for="Code"></label>
+            <input asp-for="Code" class="form-control" />
+            <span asp-validation-for="Code" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Name"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="YearlyPrice"></label>
+            <input asp-for="YearlyPrice" class="form-control" />
+            <span asp-validation-for="YearlyPrice" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Add</button>
+        <a asp-controller="Product" asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </div>
+</form>
+
+
+@*EDITING*@
+<form method="post" asp-action="Edit">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="test-primary">Edit Product</h2>
+            <hr />
+        </div>
+        @*@<div asp-validation-summary="All"></div>*@
+        <div class="mb-3">
+            <label asp-for="Code"></label>
+            <input asp-for="Code" class="form-control" />
+            <span asp-validation-for="Code" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Name"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="YearlyPrice"></label>
+            <input asp-for="YearlyPrice" class="form-control" />
+            <span asp-validation-for="YearlyPrice" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+        <a asp-controller="Product" asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </div>
+</form>

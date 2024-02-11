@@ -1,0 +1,19 @@
+﻿@model List<SportsPro.Models.Products>
+
+@{
+    ViewData["Title"] = "Manage Products";
+}
+
+<h2>Manage Products</h2>
+
+<table class="table table-bordered table-striped">
+    <tbody>
+        @foreach (var product in Model)
+        {
+        }
+    </tbody>
+</table>
+
+<div class="mb-2">
+    <a asp-controller="Home" asp-action="AddEditProduct">Add Product</a>
+</div>

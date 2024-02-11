@@ -1,0 +1,40 @@
+﻿
+@model List<SportsPro.Models.Products>
+
+@{
+    ViewData["Title"] = "Products";
+}
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Release Year</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.Code</td>
+                <td>@product.Name</td>
+                <td>@product.YearlyPrice</td>
+                <td>@product.CreatedDateTime</td>
+                <td>
+                    <div class="w-75 btn-group" role="group">
+                        <a class="btn btn-primary mx-2" asp-controller="Product" asp-action="Edit" asp-route-id="@product.ProductId">Edit</a>
+                        <a class="btn btn-danger" asp-controller="Product" asp-action="Delete" asp-route-id="@product.ProductId">Delete</a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="mb-2">
+    <a class="btn btn-success" asp-controller="Product" asp-action="Add">Add</a>
+</div>
